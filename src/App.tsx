@@ -1,8 +1,8 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import Pages from "./pages";
-import { HOME_PAGE_ROUTE, ABOUT_PAGE_ROUTE } from "./constants/routes";
+import Pages from "pages";
+import { HOME_PAGE_ROUTE, ABOUT_PAGE_ROUTE } from "constants/routes";
 
 function App() {
   return (
