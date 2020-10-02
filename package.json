@@ -2,7 +2,7 @@
   "name": "dbc",
   "version": "0.1.0",
   "private": true,
-  "homepage": "~kbromma/",
+  "homepage": "~devikac/",
   "dependencies": {
     "@material-ui/core": "^4.11.0",
     "@material-ui/icons": "^4.9.1",
@@ -14,10 +14,14 @@
     "@types/react": "^16.9.0",
     "@types/react-dom": "^16.9.0",
     "classnames": "^2.2.6",
+    "gray-matter": "^4.0.2",
+    "node-sass": "^4.14.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3",
+    "remark": "^12.0.1",
+    "remark-html": "^12.0.0",
     "typescript": "~3.7.2"
   },
   "scripts": {

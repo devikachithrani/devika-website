@@ -7,14 +7,15 @@ import classNames from "classnames";
 import Button from "@material-ui/core/Button";
 
 import useStyles from "theme/jss/material-kit-react/components/buttonStyle";
-
-const defaultProps = {
-  size: "lg",
-  color: "transparent",
-};
+import setDefaultProps from "util/setDefaultProps";
 
 const RegularButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
   (props, ref) => {
+    const args = setDefaultProps(props, {
+      size: "lg",
+      color: "transparent",
+    });
+
     const {
       color,
       round,
@@ -28,7 +29,7 @@ const RegularButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
       justIcon,
       className,
       ...rest
-    } = props;
+    } = args;
 
     const classes = useStyles();
 
@@ -57,7 +58,7 @@ const RegularButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
 export default RegularButton;
 
 export type ButtonProps = {
-  color:
+  color?:
     | "primary"
     | "info"
     | "success"
@@ -70,7 +71,7 @@ export type ButtonProps = {
     | "google"
     | "github"
     | "transparent";
-  size: "sm" | "lg";
+  size?: "sm" | "lg";
   simple?: boolean;
   round?: boolean;
   fullWidth?: boolean;
@@ -79,5 +80,8 @@ export type ButtonProps = {
   link?: boolean;
   justIcon?: boolean;
   children?: React.ReactNode;
-  className: string;
-} & typeof defaultProps;
+  className?: string;
+  href?: string;
+  target?: string;
+  rel?: string;
+};

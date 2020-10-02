@@ -1,6 +1,6 @@
 import { makeStyles } from "@material-ui/core/styles";
 
-import { defaultFont } from "../../material-kit-react";
+import { defaultFont } from "../material-kit-react";
 
 const headerLinksStyle = makeStyles((theme) => ({
   list: {

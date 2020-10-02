@@ -117,6 +117,10 @@ const Header = (props: HeaderProps) => {
   );
 };
 
+Header.defaultProp = {
+  color: "white",
+};
+
 export default Header;
 
 export type HeaderProps = {

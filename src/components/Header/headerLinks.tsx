@@ -15,9 +15,11 @@ import useStyles from "theme/jss/material-kit-react/components/headerLinkStyle";
 const HeaderLinks = () => {
   const classes = useStyles();
   return (
-    <List>
-      <ListItem>
-        <Link to={"/about"}>about</Link>
+    <List className={classes.list}>
+      <ListItem className={classes.listItem}>
+        <Button color="transparent" size="sm" className={classes.navLink}>
+          About
+        </Button>
       </ListItem>
     </List>
   );

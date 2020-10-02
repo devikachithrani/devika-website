@@ -11,7 +11,7 @@ import {
   transition,
   boxShadow,
   drawerWidth,
-} from "../../material-kit-react";
+} from "../material-kit-react";
 
 const headerStyle = makeStyles({
   appBar: {
@@ -42,7 +42,7 @@ const headerStyle = makeStyles({
   },
   container: {
     ...container,
-    minHeight: "50px",
+    minHeight: "40px",
     flex: "1",
     alignItems: "center",
     justifyContent: "space-between",
