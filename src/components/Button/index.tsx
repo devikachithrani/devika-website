@@ -84,4 +84,5 @@ export type ButtonProps = {
   href?: string;
   target?: string;
   rel?: string;
+  type?: "button" | "reset" | "submit" | undefined;
 };

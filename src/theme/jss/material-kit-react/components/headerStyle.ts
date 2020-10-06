@@ -59,6 +59,7 @@ const headerStyle = makeStyles({
     borderRadius: "3px",
     textTransform: "none",
     color: "inherit",
+    textDecoration: "inherit",
     padding: "8px 16px",
     letterSpacing: "unset",
     "&:hover,&:focus": {
@@ -147,6 +148,14 @@ const headerStyle = makeStyles({
     paddingRight: "0px",
     paddingLeft: "0",
     ...transition,
+  },
+  link: {
+    textDecoration: "none",
+    color: "inherit",
+    "&:hover,&:focus": {
+      color: "inherit",
+      background: "transparent",
+    },
   },
 });
 

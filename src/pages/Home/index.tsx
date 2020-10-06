@@ -3,12 +3,14 @@ import classNames from "classnames";
 import Header from "components/Header";
 import HeaderLinks from "components/Header/headerLinks";
 import Parallax from "components/Parallax";
+import Footer from "components/Footer";
 
 import useStyles from "theme/jss/material-kit-react/pages/homePage";
 import GridItem from "components/Grid/GridItem";
 import GridContainer from "components/Grid/GridContainer";
 import Button from "components/Button";
-import Problem from "./sections/theProblem";
+import Problem from "./sections/aboutUs";
+import WhatWeDo from "./sections/whatDoWeDo";
 
 const Home = (props: HomeProps) => {
   const classes = useStyles();
@@ -17,7 +19,7 @@ const Home = (props: HomeProps) => {
     <div>
       <Header
         color="transparent"
-        brand="Chithrani - Nanotechnology Lab"
+        brand="Nanoscience and Technology Laboratory"
         fixed
         rightLinks={<HeaderLinks />}
         changeColorOnScroll={{
@@ -30,7 +32,9 @@ const Home = (props: HomeProps) => {
         <div className={classes.container}>
           <GridContainer>
             <GridItem xs={12} sm={12} md={6}>
-              <h1 className={classes.title}>Nanotechnology Lab</h1>
+              <h1 className={classes.title}>
+                Nanoscience and Technology Laboratory
+              </h1>
               <h4>
                 Nanotechnology involves creation and utilization of materials,
                 devices or systems on the nanometer scale. The field of
@@ -57,8 +61,10 @@ const Home = (props: HomeProps) => {
       <div className={classNames(classes.main, classes.mainRaised)}>
         <div className={classes.container}>
           <Problem />
+          <WhatWeDo />
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

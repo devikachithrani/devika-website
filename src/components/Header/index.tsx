@@ -1,6 +1,7 @@
 import React from "react";
 
 import classNames from "classnames";
+import { Link } from "react-router-dom";
 
 //Components
 import AppBar from "@material-ui/core/AppBar";
@@ -13,9 +14,16 @@ import Drawer from "@material-ui/core/Drawer";
 //Icons
 import Menu from "@material-ui/icons/Menu";
 
+import RegularButton from "components/Button";
 import useStyles from "theme/jss/material-kit-react/components/headerStyle";
+import setDefaults from "util/setDefaultProps";
+import { HOME_PAGE_ROUTE } from "constants/routes";
 
 const Header = (props: HeaderProps) => {
+  const defProps = setDefaults(props, {
+    color: "white",
+    changeColorOnScroll: { color: "white", height: 0 },
+  });
   const classes = useStyles();
 
   // for mobile view
@@ -26,7 +34,7 @@ const Header = (props: HeaderProps) => {
 
   // Change color of header using this function
   const headerColorChange = () => {
-    const { color, changeColorOnScroll } = props;
+    const { color, changeColorOnScroll } = defProps;
     const windowsScrollTop = window.pageYOffset;
     if (windowsScrollTop > changeColorOnScroll.height) {
       document.body
@@ -47,18 +55,18 @@ const Header = (props: HeaderProps) => {
 
   // The effect for changing header color
   React.useEffect(() => {
-    if (props.changeColorOnScroll) {
+    if (defProps.changeColorOnScroll) {
       window.addEventListener("scroll", headerColorChange);
     }
     return function cleanup() {
-      if (props.changeColorOnScroll) {
+      if (defProps.changeColorOnScroll) {
         window.removeEventListener("scroll", headerColorChange);
       }
     };
   });
 
   // Deconstruct our props
-  const { color, rightLinks, leftLinks, brand, fixed, absolute } = props;
+  const { color, rightLinks, leftLinks, brand, fixed, absolute } = defProps;
 
   // And name appBarClasses for the MUI AppBar
   const appBarClasses = classNames({
@@ -69,7 +77,13 @@ const Header = (props: HeaderProps) => {
   });
 
   // Simple button for our brand
-  const brandComponent = <Button className={classes.title}>{brand}</Button>;
+  const brandComponent = (
+    <Link className={classes.link} to={HOME_PAGE_ROUTE}>
+      <RegularButton link className={classes.title}>
+        {brand}
+      </RegularButton>
+    </Link>
+  );
 
   return (
     <AppBar className={appBarClasses}>
@@ -124,7 +138,7 @@ Header.defaultProp = {
 export default Header;
 
 export type HeaderProps = {
-  color:
+  color?:
     | "primary"
     | "info"
     | "success"
@@ -139,7 +153,7 @@ export type HeaderProps = {
   leftLinks?: React.ReactNode;
   rightLinks?: React.ReactNode;
   absolute?: boolean;
-  changeColorOnScroll: {
+  changeColorOnScroll?: {
     height: number;
     color:
       | "primary"

@@ -11,15 +11,37 @@ import ListItem from "@material-ui/core/ListItem";
 import Button from "components/Button";
 
 import useStyles from "theme/jss/material-kit-react/components/headerLinkStyle";
+import {} from "constants";
+import {
+  MEMBERS_PAGE_ROUTE,
+  PUB_PAGE_ROUTE,
+  NEWS_PAGE_ROUTE,
+} from "constants/routes";
 
 const HeaderLinks = () => {
   const classes = useStyles();
   return (
     <List className={classes.list}>
       <ListItem className={classes.listItem}>
-        <Button color="transparent" size="sm" className={classes.navLink}>
-          About
-        </Button>
+        <Link className={classes.link} to={MEMBERS_PAGE_ROUTE}>
+          <Button color="transparent" size="sm" className={classes.navLink}>
+            Members
+          </Button>
+        </Link>
+      </ListItem>
+      <ListItem className={classes.listItem}>
+        <Link className={classes.link} to={PUB_PAGE_ROUTE}>
+          <Button color="transparent" size="sm" className={classes.navLink}>
+            Publications
+          </Button>
+        </Link>
+      </ListItem>
+      <ListItem className={classes.listItem}>
+        <Link className={classes.link} to={NEWS_PAGE_ROUTE}>
+          <Button color="transparent" size="sm" className={classes.navLink}>
+            News
+          </Button>
+        </Link>
       </ListItem>
     </List>
   );

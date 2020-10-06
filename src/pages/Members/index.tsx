@@ -1,7 +1,8 @@
 import React from "react";
+import Layout from "components/Layout";
 
-const About = () => {
-  return <div>'about'</div>;
+const Members = () => {
+  return <Layout>Members here</Layout>;
 };
 
-export default About;
+export default Members;

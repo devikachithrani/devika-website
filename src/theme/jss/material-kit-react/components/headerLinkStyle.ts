@@ -136,6 +136,14 @@ const headerLinksStyle = makeStyles((theme) => ({
   marginRight5: {
     marginRight: "5px",
   },
+  link: {
+    textDecoration: "none",
+    color: "inherit",
+    "&:hover,&:focus": {
+      color: "inherit",
+      background: "transparent",
+    },
+  },
 }));
 
 export default headerLinksStyle;
