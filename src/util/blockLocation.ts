@@ -5,16 +5,15 @@ export default function useLocationBlocker() {
   const history = useHistory();
   useEffect(
     () => {
-      if (history)
-        history.block((location, action) => {
-          if (
-            action === "PUSH" ||
-            getLocationId(location) === getLocationId(history.location)
-          ) {
-            return;
-          }
-          return false;
-        });
+      history.block((location, action) => {
+        if (
+          action !== "PUSH" ||
+          getLocationId(location) !== getLocationId(history.location)
+        ) {
+          return;
+        }
+        return false;
+      });
     },
     [] // eslint-disable-line react-hooks/exhaustive-deps
   );
