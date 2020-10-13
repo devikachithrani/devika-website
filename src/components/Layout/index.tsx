@@ -15,6 +15,7 @@ const Layout = (props: LayoutProps) => {
       <Header
         brand="Nanoscience and Technology Laboratory"
         rightLinks={<HeaderLinks />}
+        fixed
       />
       {children}
       <Footer />

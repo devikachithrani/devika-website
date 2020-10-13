@@ -11,6 +11,8 @@ import {
 import useLocationBlocker from "util/blockLocation";
 
 const Routes = () => {
+  // Util to make sure the history works correctly.
+  // i.e. If a link is pressed multuple times, will only keep one instance in history.
   useLocationBlocker();
   return (
     <Switch>

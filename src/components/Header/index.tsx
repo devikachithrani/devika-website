@@ -14,7 +14,6 @@ import Drawer from "@material-ui/core/Drawer";
 //Icons
 import Menu from "@material-ui/icons/Menu";
 
-import RegularButton from "components/Button";
 import useStyles from "theme/jss/material-kit-react/components/headerStyle";
 import setDefaults from "util/setDefaultProps";
 import { HOME_PAGE_ROUTE } from "constants/routes";
@@ -79,9 +78,7 @@ const Header = (props: HeaderProps) => {
   // Simple button for our brand
   const brandComponent = (
     <Link className={classes.link} to={HOME_PAGE_ROUTE}>
-      <RegularButton link className={classes.title}>
-        {brand}
-      </RegularButton>
+      <Button className={classes.title}>{brand}</Button>
     </Link>
   );
 
