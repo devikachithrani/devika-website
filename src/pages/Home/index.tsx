@@ -10,7 +10,6 @@ import GridItem from "components/Grid/GridItem";
 import GridContainer from "components/Grid/GridContainer";
 import Button from "components/Button";
 import Problem from "./sections/aboutUs";
-import WhatWeDo from "./sections/whatDoWeDo";
 
 const Home = (props: HomeProps) => {
   const classes = useStyles();
@@ -61,7 +60,6 @@ const Home = (props: HomeProps) => {
       <div className={classNames(classes.main, classes.mainRaised)}>
         <div className={classes.container}>
           <Problem />
-          <WhatWeDo />
         </div>
       </div>
       <Footer />

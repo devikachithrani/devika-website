@@ -40,7 +40,10 @@ const Member = (props: MemberProps) => {
         </GridItem>
         <h4 className={classes.cardTitle}>
           {member.title} <br />
-          <small className={classes.smallTitle}>{member.position}</small>
+          <small className={classes.smallTitle}>
+            {member.position}
+            <br /> {member.email}
+          </small>
         </h4>
         <CardBody>
           <p

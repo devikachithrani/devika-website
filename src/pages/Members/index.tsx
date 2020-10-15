@@ -19,6 +19,7 @@ export interface MemberState extends ResultType {
   funcidng: string;
   linkedIn: string;
   profile: string;
+  email?: string;
 }
 
 const Members = () => {

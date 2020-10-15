@@ -4,7 +4,6 @@ import {
   grayColor,
   primaryColor,
 } from "theme/jss/material-kit-react/material-kit-react";
-import customCheckBoxRadioStyle from "theme/jss/material-kit-react/components/customCheckBoxRadioSwtich";
 
 import { makeStyles } from "@material-ui/core/styles";
 

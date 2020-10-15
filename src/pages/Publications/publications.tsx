@@ -95,6 +95,7 @@ const Publications = (props: PublicationProps) => {
               index={pageLimit * (currentPage - 1) + index}
               users={users}
               key={publication.DOI}
+              citation={orderByCitation}
             />
           );
         })}

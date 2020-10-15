@@ -17,7 +17,7 @@ const extraNames = [
 const Publication = (props: PublicationProps) => {
   const classes = useStyles();
 
-  const { publication, index, users } = props;
+  const { publication, index, users, citation } = props;
   return (
     <GridContainer>
       <GridItem xs={4} sm={3} md={2} lg={1}>
@@ -84,12 +84,14 @@ const Publication = (props: PublicationProps) => {
           )}
         </div>
       </GridItem>
-      <GridItem xs={4} sm={3} md={2} lg={1}>
-        <div className={classes.citations}>
-          <div className={classes.title}>Citations</div>
-          <small>{publication.citations}</small>
-        </div>
-      </GridItem>
+      {citation && (
+        <GridItem xs={4} sm={3} md={2} lg={1}>
+          <div className={classes.citations}>
+            <div className={classes.title}>Citations</div>
+            <small>{publication.citations}</small>
+          </div>
+        </GridItem>
+      )}
     </GridContainer>
   );
 };
@@ -98,6 +100,7 @@ type PublicationProps = {
   publication: CitationType;
   users: string[];
   index: number;
+  citation: boolean;
 };
 
 export default Publication;

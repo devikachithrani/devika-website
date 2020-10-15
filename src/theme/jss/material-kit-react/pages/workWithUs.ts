@@ -25,6 +25,9 @@ const workWithUs = makeStyles({
     marginRight: "15px",
     marginLeft: "15px",
   },
+  form: {
+    justifyContent: "center",
+  },
 });
 
 export default workWithUs;
