@@ -36,7 +36,6 @@ export const getCitationFromDoi = async (
 export const getBookFromDoi = async (doi: string): Promise<CitationType> => {
   const results = await axios.get<any>(`https://api.crossref.org/works/${doi}`);
   const data = results.data.message;
-  console.log(data);
   return {
     DOI: data.DOI,
     URL: data.URL,

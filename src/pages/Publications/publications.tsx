@@ -88,17 +88,24 @@ const Publications = (props: PublicationProps) => {
       {publications &&
         currentPublications &&
         users &&
-        currentPublications.map((publication, index) => {
-          return (
-            <Publication
-              publication={publication}
-              index={pageLimit * (currentPage - 1) + index}
-              users={users}
-              key={publication.DOI}
-              citation={orderByCitation}
-            />
-          );
-        })}
+        <div>
+          <GridContainer>
+            <GridItem lg={4} md={6} sm={8}>
+              Page {currentPage}/{Math.ceil(publications.length/pageLimit)}
+            </GridItem>
+          </GridContainer>
+          {currentPublications.map((publication, index) => {
+            return (
+              <Publication
+                publication={publication}
+                index={pageLimit * (currentPage - 1) + index}
+                users={users}
+                key={publication.DOI}
+                citation={orderByCitation}
+              />
+            );
+          })}
+        </div>}
       <br />
       <GridContainer justify={"center"}>
         {publications && (
@@ -106,6 +113,7 @@ const Publications = (props: PublicationProps) => {
             totalRecords={publications.length}
             pageLimit={pageLimit}
             onPageChanged={onPageChanged}
+            scroll={150}
           />
         )}
       </GridContainer>

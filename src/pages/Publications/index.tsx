@@ -27,9 +27,9 @@ const PublishedMaterial = () => {
                 ),
               },
               {
-                tabButton: "Books",
+                tabButton: "Book Chapters",
                 tabIcon: MenuBookIcon,
-                tabContent: <Publications title="Books" type="books" />,
+                tabContent: <Publications title="Book Chapters" type="books" />,
               },
             ]}
           />

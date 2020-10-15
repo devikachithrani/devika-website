@@ -10,4 +10,4 @@ profile: "abdulaziza.jpg"
 email: "alhussan@uvic.ca"
 ---
 
-Working on making a more realistic environment in the lab comapred to a tumor, by integrating stromal cells. This will allow for a complex enviroment to be better modeled in the lab.
+Working on making a more realistic environment in the lab compared to a tumor, by integrating stromal cells. This will allow for a complex environment to be better modelled in the lab.

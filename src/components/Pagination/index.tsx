@@ -15,7 +15,7 @@ export default function Pagination(props: PaginationProps) {
   const defProps = setDefaultProps(props, {
     color: "primary",
     pageLimit: 5,
-    pageNeighours:
+    pageNeighbours:
       typeof props.pageNeighbours === "number"
         ? Math.max(0, Math.min(props.pageNeighbours, 2))
         : 0,
@@ -28,6 +28,7 @@ export default function Pagination(props: PaginationProps) {
     pageLimit,
     pageNeighbours,
     onPageChanged,
+    scroll
   } = defProps;
 
   // Set up pagination
@@ -46,6 +47,7 @@ export default function Pagination(props: PaginationProps) {
   ) => {
     evt.preventDefault();
     gotoPage(page);
+    window.scrollTo(0, scroll)
   };
 
   const handleMoveLeft = (
@@ -53,6 +55,7 @@ export default function Pagination(props: PaginationProps) {
   ) => {
     evt.preventDefault();
     gotoPage(currentPage - pageNeighbours * 2 - 1);
+    window.scrollTo(0, scroll)
   };
 
   const handleMoveRight = (
@@ -60,6 +63,7 @@ export default function Pagination(props: PaginationProps) {
   ) => {
     evt.preventDefault();
     gotoPage(currentPage + pageNeighbours * 2 + 1);
+    window.scrollTo(0, scroll)
   };
 
   useEffect(() => {
@@ -124,4 +128,5 @@ type PaginationProps = {
   pageLimit?: number;
   pageNeighbours?: number;
   onPageChanged?: (data: { currentPage: number; pageLimit: number }) => any;
+  scroll: number;
 };

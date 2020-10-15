@@ -18,12 +18,24 @@ const Publication = (props: PublicationProps) => {
   const classes = useStyles();
 
   const { publication, index, users, citation } = props;
+  const main: {xs: 10|6, sm: 10|7, md: 10|8, lg: 10|9} = {
+    xs: 10,
+    sm: 10,
+    md: 10,
+    lg: 10
+  }
+  if(citation){
+    main.xs=6
+    main.sm=7
+    main.md=8
+    main.lg=9
+  }
   return (
     <GridContainer>
-      <GridItem xs={4} sm={3} md={2} lg={1}>
+      <GridItem xs={2} sm={2} md={2} lg={1}>
         <h2>{index + 1}.</h2>
       </GridItem>
-      <GridItem xs={4} sm={6} md={8} lg={10}>
+      <GridItem xs={main.xs} sm={main.sm} md={main.md} lg={main.lg}>
         <h4 className={classes.title}>
           <a href={publication.URL} className={classes.titleLink}>
             {publication.title}

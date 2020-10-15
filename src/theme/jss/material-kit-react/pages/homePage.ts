@@ -9,7 +9,7 @@ const landingPageStyle = makeStyles({
   container: {
     zIndex: 12,
     color: "#FFFFFF",
-    ...container,
+    ...container
   },
   title: {
     ...title,
@@ -19,6 +19,25 @@ const landingPageStyle = makeStyles({
     minHeight: "32px",
     color: "#FFFFFF",
     textDecoration: "none",
+    "@media screen and (orientation:landscape) and (max-height: 500px)": {
+      display: "none"
+    },
+    "@media screen and (max-width: 480px)": {
+      fontSize: "5.5vh"
+    },
+    "@media screen and (max-width: 576px)": {
+      fontSize: "6.5vh"
+    },
+    "@media screen and (max-width: 768px)": {
+      fontSize: "5.5vh"
+    },
+    "@media screen and (max-width: 992px)": {
+      fontSize: "4.5vh"
+    },
+    "@media screen and (max-width: 1200px)": {
+      fontSize: "3.5vh"
+    },
+    
   },
   subtitle: {
     fontSize: "1.313rem",
