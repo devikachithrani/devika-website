@@ -11,7 +11,7 @@ const NewsItem = (props: NewsProps) => {
   const classes = useStyles();
 
   const { news } = props;
-  const date = new Date(news.date + " GMT -0800");
+  const date = new Date(news.date + "T00:00:00-08:00");
   return (
     <GridContainer className={classes.newsContainer}>
       <GridItem md={3} lg={2}>
