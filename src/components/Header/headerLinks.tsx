@@ -26,7 +26,7 @@ const HeaderLinks = () => {
       <ListItem className={classes.listItem}>
         <Link className={classes.link} to={MEMBERS_PAGE_ROUTE}>
           <Button color="transparent" size="sm" className={classes.navLink}>
-            Members
+            The Lab
           </Button>
         </Link>
       </ListItem>

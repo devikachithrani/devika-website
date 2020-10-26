@@ -11,7 +11,7 @@ import Button from "components/Button";
 
 import setDefaultProps from "util/setDefaultProps";
 
-import { MemberState } from "./index";
+import { MemberState } from "./members";
 
 const Member = (props: MemberProps) => {
   const classes = useStyles();
@@ -45,14 +45,16 @@ const Member = (props: MemberProps) => {
             <br /> {member.email}
           </small>
         </h4>
-        <CardBody>
-          <p
-            className={classes.description}
-            dangerouslySetInnerHTML={{
-              __html: member.contentHtml,
-            }}
-          ></p>
-        </CardBody>
+        {!member.undergrad &&
+          <CardBody>
+            <p
+              className={classes.description}
+              dangerouslySetInnerHTML={{
+                __html: member.contentHtml,
+              }}
+            ></p>
+          </CardBody>
+        }
         {member.linkedin && (
           <CardFooter className={classes.justifyCenter}>
             <Button
