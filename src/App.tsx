@@ -1,25 +1,39 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
+import Pages from "pages";
+import {
+  HOME_PAGE_ROUTE,
+  MEMBERS_PAGE_ROUTE,
+  NEWS_PAGE_ROUTE,
+  PUB_PAGE_ROUTE,
+  CONTACT_US_PAGE_ROUTE,
+  PHOTOS_PAGE_ROUTE,
+} from "constants/routes";
+import useLocationBlocker from "util/blockLocation";
+
+const Routes = () => {
+  // Util to make sure the history works correctly.
+  // i.e. If a link is pressed multuple times, will only keep one instance in history.
+  useLocationBlocker();
+  return (
+    <Switch>
+      <Route exact path={HOME_PAGE_ROUTE} component={Pages.Home} />
+      <Route path={MEMBERS_PAGE_ROUTE} component={Pages.Members} />
+      <Route path={NEWS_PAGE_ROUTE} component={Pages.News} />
+      <Route path={PUB_PAGE_ROUTE} component={Pages.Publications} />
+      <Route path={CONTACT_US_PAGE_ROUTE} component={Pages.ContactUs} />
+      <Route path={PHOTOS_PAGE_ROUTE} component={Pages.Group} />
+      <Route path={"*"} component={Pages.NotFound} />
+    </Switch>
+  );
+};
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Routes />
+    </Router>
   );
 }
 
