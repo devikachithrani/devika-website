@@ -25,7 +25,6 @@ const Members = () => {
   useEffect(() => {
     const getData = async () => {
       const results = (await getSortedMDData("lab", false)) as MemberState[];
-      console.log(results);
       setMembers(results);
     };
 

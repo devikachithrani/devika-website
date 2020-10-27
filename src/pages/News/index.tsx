@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Layout from "components/Layout";
 import GridContainer from "components/Grid/GridContainer";
-import GridItem from 'components/Grid/GridItem'
+import GridItem from "components/Grid/GridItem";
 import Pagination from "components/Pagination";
 import NewsItem from "./newsItem";
 
@@ -46,17 +46,18 @@ const News = () => {
           <h1 className={classes.title}>News in the Lab</h1>
           <br />
           <GridContainer>
-            {news &&
-              currentNews &&
+            {news && currentNews && (
               <div>
-                <GridContainer><GridItem lg={4} md={6} sm={8}>
-                    Page {currentPage}/{Math.ceil(news.length/pageLimit)}
+                <GridContainer>
+                  <GridItem lg={4} md={6} sm={8}>
+                    Page {currentPage}/{Math.ceil(news.length / pageLimit)}
                   </GridItem>
                 </GridContainer>
                 {currentNews.map((newsVal) => {
                   return <NewsItem news={newsVal} key={newsVal.id} />;
                 })}
-              </div>}
+              </div>
+            )}
           </GridContainer>
           <br />
           <GridContainer justify={"center"}>

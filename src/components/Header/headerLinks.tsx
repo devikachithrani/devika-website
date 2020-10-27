@@ -17,6 +17,7 @@ import {
   PUB_PAGE_ROUTE,
   NEWS_PAGE_ROUTE,
   CONTACT_US_PAGE_ROUTE,
+  PHOTOS_PAGE_ROUTE,
 } from "constants/routes";
 
 const HeaderLinks = () => {
@@ -26,7 +27,7 @@ const HeaderLinks = () => {
       <ListItem className={classes.listItem}>
         <Link className={classes.link} to={MEMBERS_PAGE_ROUTE}>
           <Button color="transparent" size="sm" className={classes.navLink}>
-            The Lab
+            Members
           </Button>
         </Link>
       </ListItem>
@@ -41,6 +42,13 @@ const HeaderLinks = () => {
         <Link className={classes.link} to={NEWS_PAGE_ROUTE}>
           <Button color="transparent" size="sm" className={classes.navLink}>
             News
+          </Button>
+        </Link>
+      </ListItem>
+      <ListItem className={classes.listItem}>
+        <Link className={classes.link} to={PHOTOS_PAGE_ROUTE}>
+          <Button color="transparent" size="sm" className={classes.navLink}>
+            Group Photos
           </Button>
         </Link>
       </ListItem>

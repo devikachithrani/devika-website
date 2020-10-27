@@ -8,6 +8,7 @@ import {
   NEWS_PAGE_ROUTE,
   PUB_PAGE_ROUTE,
   CONTACT_US_PAGE_ROUTE,
+  PHOTOS_PAGE_ROUTE,
 } from "constants/routes";
 import useLocationBlocker from "util/blockLocation";
 
@@ -22,6 +23,7 @@ const Routes = () => {
       <Route path={NEWS_PAGE_ROUTE} component={Pages.News} />
       <Route path={PUB_PAGE_ROUTE} component={Pages.Publications} />
       <Route path={CONTACT_US_PAGE_ROUTE} component={Pages.ContactUs} />
+      <Route path={PHOTOS_PAGE_ROUTE} component={Pages.Group} />
       <Route path={"*"} component={Pages.NotFound} />
     </Switch>
   );
