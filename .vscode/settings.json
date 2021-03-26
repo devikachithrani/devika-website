@@ -5,11 +5,10 @@
     "editor.formatOnSave": true,
 
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-},
-"prettier.packageManager": "yarn",
+  },
+  "prettier.packageManager": "yarn",
 
-"editor.defaultFormatter": "esbenp.prettier-vscode",
-"cSpell.words": [
-  "linkedin"
-]
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "cSpell.words": ["linkedin"],
+  "editor.formatOnSave": true
 }

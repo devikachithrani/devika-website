@@ -18,18 +18,43 @@ export type CitationType = {
 };
 
 export const getCitationFromDoi = async (
-  doi: string
+  doi: string,
+  custom?: CitationType
 ): Promise<CitationType> => {
-  const results = await axios.get<any>(`https://api.crossref.org/works/${doi}`);
-  const data = results.data.message;
+  try {
+    const results = await axios.get<any>(
+      `https://api.crossref.org/works/${doi}`
+    );
+    const data = results.data.message;
+    return {
+      DOI: data.DOI,
+      URL: data.URL,
+      journal: data["container-title"][0],
+      date: new Date(data.created["date-time"]),
+      title: data.title[0],
+      authors: data.author,
+      citations: data["is-referenced-by-count"],
+    };
+  } catch (err) {
+    if (custom)
+      return {
+        DOI: custom.DOI,
+        URL: custom.URL,
+        journal: custom.journal,
+        date: new Date(custom.date),
+        title: custom.title,
+        authors: custom.authors,
+        citations: custom.citations,
+      };
+  }
   return {
-    DOI: data.DOI,
-    URL: data.URL,
-    journal: data["container-title"][0],
-    date: new Date(data.created["date-time"]),
-    title: data.title[0],
-    authors: data.author,
-    citations: data["is-referenced-by-count"],
+    DOI: "",
+    URL: "",
+    journal: "",
+    date: new Date(),
+    title: "",
+    authors: [{ given: "", family: "", sequence: "" }],
+    citations: 0,
   };
 };
 
@@ -52,6 +77,7 @@ type DOIType = {
   doi: string;
   isbn?: string;
   book?: boolean;
+  custom?: CitationType;
 };
 
 export const getDois = async (location: string, newest: boolean = true) => {
@@ -64,6 +90,7 @@ export const getDois = async (location: string, newest: boolean = true) => {
   const result: CitationType[] = await Promise.all(
     Object.entries(dois.data).map(([key, value]: [string, DOIType]) => {
       if (value.book) return getBookFromDoi(value.doi);
+      else if (value.custom) return getCitationFromDoi(value.doi, value.custom);
       else return getCitationFromDoi(value.doi);
     })
   );
