@@ -3,7 +3,7 @@ title: "Paper published in Pharmaceutics journal"
 date: "2021-03-25"
 ---
 
-Congratulations to Abdulaziz Alhussan et al. for publishing a new paper in Pharmaceutics by MDPI (DOI: 10.3390/pharmaceutics13040442).
+Congratulations to Abdulaziz Alhussan et al. for publishing a new paper in Pharmaceutics by MDPI (DOI: <a href="https://doi.org/10.3390/pharmaceutics13040442">10.3390/pharmaceutics13040442</a>).
 
 <center>
 <img src="/~devikac/img/publications/pharma-mar-2021.png" alt="10.3390/pharmaceutics13040442" width="500"/>

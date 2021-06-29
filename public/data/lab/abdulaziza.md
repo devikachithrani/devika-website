@@ -3,7 +3,7 @@ title: "Abdulaziz Alhussan"
 date: "2020-08-01"
 active: true
 credentials: "Unknown"
-position: "PhD Student"
+position: "PhD Candidate"
 funding: "N/A"
 linkedin: "https://www.linkedin.com/in/abdulaziz-alhussan-a0b990138/"
 profile: "abdulaziza.jpg"

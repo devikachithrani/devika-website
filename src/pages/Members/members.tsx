@@ -56,11 +56,7 @@ const Members = () => {
             </GridItem>
             {members &&
               members.map((member): JSX.Element | undefined => {
-                if (
-                  member.active &&
-                  member.id !== "devikac" &&
-                  !member.undergrad
-                ) {
+                if (member.active && member.id !== "devikac") {
                   return <Member member={member} lg={4} key={member.id} />;
                 }
                 return undefined;
@@ -78,7 +74,7 @@ const Members = () => {
               .reverse()
               .map((member): JSX.Element | undefined => {
                 if (!member.active && !member.undergrad) {
-                  return <Member member={member} lg={4} key={member.id} />;
+                  return <Member member={member} lg={3} key={member.id} />;
                 }
                 return undefined;
               })}

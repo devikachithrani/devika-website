@@ -12,23 +12,24 @@ const extraNames = [
   "Chithrani, BD",
   "Chithrani, D",
   "Bannister, AH",
+  "Bozdoğan, EPD",
 ];
 
 const Publication = (props: PublicationProps) => {
   const classes = useStyles();
 
   const { publication, index, users, citation } = props;
-  const main: {xs: 10|6, sm: 10|7, md: 10|8, lg: 10|9} = {
+  const main: { xs: 10 | 6; sm: 10 | 7; md: 10 | 8; lg: 10 | 9 } = {
     xs: 10,
     sm: 10,
     md: 10,
-    lg: 10
-  }
-  if(citation){
-    main.xs=6
-    main.sm=7
-    main.md=8
-    main.lg=9
+    lg: 10,
+  };
+  if (citation) {
+    main.xs = 6;
+    main.sm = 7;
+    main.md = 8;
+    main.lg = 9;
   }
   return (
     <GridContainer>

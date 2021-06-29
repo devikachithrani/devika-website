@@ -45,7 +45,7 @@ const Member = (props: MemberProps) => {
             <br /> {member.email}
           </small>
         </h4>
-        {!member.undergrad &&
+        {classes.description && (
           <CardBody>
             <p
               className={classes.description}
@@ -54,7 +54,7 @@ const Member = (props: MemberProps) => {
               }}
             ></p>
           </CardBody>
-        }
+        )}
         {member.linkedin && (
           <CardFooter className={classes.justifyCenter}>
             <Button
