@@ -1,7 +1,7 @@
 ---
 title: "Ocean Han"
 date: "2021-05-01"
-active: true
+active: false
 credentials: "Unknown"
 position: "Summer Research Student"
 funding: "NSERC USRA"
@@ -11,4 +11,4 @@ email: "pacificocean8642@gmail.com"
 undergrad: true
 ---
 
-Researching the interaction of gold nanoparticles with bleomycin as well as in combination with docetaxel.
+Researching the interaction of gold nanoparticles with bleomycin as well as in combination with docetaxel in pancreated cell lines.
