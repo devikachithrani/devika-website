@@ -67,38 +67,12 @@
     "doi": "10.3390/cancers13061465"
   },
   "pharmaceutics-march-25": {
-    "doi": "10.3390/pharmaceutics13040442",
-    "custom": {
-      "DOI": "10.3390/pharmaceutics13040442",
-      "URL": "https://doi.org/10.3390/pharmaceutics1304",
-      "journal": "Pharmaceutics",
-      "date": "2021-03-25T00:00:00Z",
-      "title": "Combining Gold Nanoparticles with Other Radiosensitizing Agents for Unlocking the Full Potential of Cancer Radiotherapy",
-      "authors": [
-        {
-          "given": "Abdulaziz",
-          "family": "Alhussan",
-          "sequence": "additional"
-        },
-        {
-          "given": "Ece Pinar Demirci",
-          "family": "Bozdoğan",
-          "sequence": "additional"
-        },
-        {
-          "given": "Devika B.",
-          "family": "Chithrani",
-          "sequence": "additional"
-        }
-      ],
-      "citations": 0
-    }
+    "doi": "10.3390/pharmaceutics13040442"
   },
   "current-onc1": {
     "doi": "10.3390/curroncol28030183"
   },
   "cancers3": {
-    "doi": "10.3390/cancers13133157",
-    "Sarah-Nolan.md"
+    "doi": "10.3390/cancers13133157"
   }
 }
