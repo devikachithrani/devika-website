@@ -6,7 +6,7 @@ credentials: "Unknown"
 position: "Summer Research Student"
 funding: "NSERC USRA"
 linkedin: "https://www.linkedin.com/in/ocean-han-764207b5/"
-profile: "hano.jpg"
+profile: "hano.png"
 email: "pacificocean8642@gmail.com"
 undergrad: true
 ---

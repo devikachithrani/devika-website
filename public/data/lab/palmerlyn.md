@@ -1,7 +1,7 @@
 ---
 title: "Nicholas Palmerley"
 date: "2021-09-01"
-active: true
+active: false
 credentials: "Unknown"
 position: "Honours Student"
 funding: "N/A"

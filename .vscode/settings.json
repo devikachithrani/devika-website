@@ -1,14 +1,9 @@
 {
   "colorize.languages": ["typescript", "javascript", "css", "scss"],
   // Format a file on save. A formatter must be available, the file must not be auto-saved, and editor must not be shutting down.
-  "[javascript]": {
-    "editor.formatOnSave": true,
-
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "prettier.packageManager": "yarn",
 
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "cSpell.words": ["linkedin"],
-  "editor.formatOnSave": true
+  "editor.formatOnSave": true,
+  "terminal.integrated.shellArgs.linux": ["-l"]
 }
