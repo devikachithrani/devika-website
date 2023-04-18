@@ -1,7 +1,7 @@
 ---
 title: "Ece Pinar Demirci Bozdogan"
 date: "2020-08-01"
-active: true
+active: false
 credentials: "Unknown"
 position: "Masters Student"
 funding: "N/A"
