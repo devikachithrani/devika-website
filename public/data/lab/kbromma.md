@@ -1,9 +1,9 @@
 ---
 title: "Kyle Bromma"
-date: "2017-01-01"
-active: true
+date: "2023-01-01"
+active: false
 credentials: "BSc in Physics, Honours; Minor in Computer Science (University of Victoria)"
-position: "PhD Candidate"
+position: "PhD, Medical Physics"
 funding: "NSERC Doctoral Fellowship (CGSD)"
 linkedin: "https://www.linkedin.com/in/kyle-bromma-97175a9b/"
 profile: "kbromma.jpg"
