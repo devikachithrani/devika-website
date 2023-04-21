@@ -3,10 +3,10 @@ title: "Sarah Eaton"
 date: "2022-09-01"
 active: true
 credentials: "BSc Physics"
-position: "NSERC USRA summer student; 4th year thesis student, JCURA recipient"
+position: "MSc Student"
 funding: "N/A"
-profile: "eatons.jpg"
+profile: "Sarah2023.jpg"
 undergrad: false
 ---
 
-Travelling across Canada
+Continuing graduate studies.
