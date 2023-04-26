@@ -9,4 +9,4 @@ profile: "Sarah2023.jpg"
 undergrad: false
 ---
 
-Continuing graduate studies.
+I am investigating the use of DNA repair inhibiting drugs in combination with gold nanoparticles and radiotherapy to see if we can increase the effectiveness of the radiation treatment while reducing normal tissue complications.
