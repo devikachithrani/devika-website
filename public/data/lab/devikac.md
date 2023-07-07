@@ -3,7 +3,7 @@ title: "Devika B. Chithrani"
 date: "2016-08-01"
 active: true
 credentials: "PhD (University of Toronto, Canada) MSc (University of Toronto, Canada) BSc (Hons; University of Colombo, Sri Lanka) NSERC Postdoctoral Fellow (University of Toronto, Canada)"
-position: "Associate Professor"
+position: "Full Professor"
 funding: "NSERC, CHR, etc..."
 linkedin: "https://www.linkedin.com/in/devika-chithrani-25280112b/"
 profile: "devikac.jpg"
