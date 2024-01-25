@@ -1,9 +1,9 @@
 ---
 title: "Abdulaziz Alhussan"
-date: "2020-08-01"
-active: true
+date: "2024-01-01"
+active: false
 credentials: "Unknown"
-position: "PhD Candidate"
+position: "PhD, Medical Physics"
 funding: "N/A"
 linkedin: "https://www.linkedin.com/in/abdulaziz-alhussan-a0b990138/"
 profile: "abdulaziza.jpg"
