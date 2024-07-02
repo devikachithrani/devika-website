@@ -6,7 +6,7 @@ credentials:
 position:
 funding:
 linkedin:
-profile: "kbrown.jpg"
+profile: "kyle-brown.jpg"
 email: "kylebrown@uvic.ca"
 undergrad: true
 ---
