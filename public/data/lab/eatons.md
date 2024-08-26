@@ -1,9 +1,9 @@
 ---
 title: "Sarah Eaton"
 date: "2022-09-01"
-active: true
+active: false
 credentials: "BSc Physics"
-position: "MSc Student"
+position: "MSc, Medical Physics"
 funding: "N/A"
 profile: "Sarah2023.jpg"
 undergrad: false
