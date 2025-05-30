@@ -1,7 +1,7 @@
 ---
 title: "Amith Valath"
 date: "2024-05-01"
-active: true
+active: false
 credentials:
 position:
 funding:
