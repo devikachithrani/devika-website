@@ -1,7 +1,7 @@
 ---
 title: "Miranda Niddrie"
 date: "2025-08-27"
-active: true
+active: false
 credentials: "BSc Physics"
 position: "Honours Student"
 funding: "NSERC, CIHR"

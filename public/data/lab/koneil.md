@@ -3,7 +3,7 @@ title: "Kieren O'Neil"
 date: "2024-05-23"
 active: true
 credentials: "BSc in Physics"
-position: "MSc, Medical Physics"
+position: "Master's Student"
 funding:
 linkedin:
 profile: "koneil.jpg"
