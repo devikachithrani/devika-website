@@ -1,0 +1,120 @@
+{
+  "nano1": {
+    "doi": "10.3390/nano10091671"
+  },
+  "scireport1": {
+    "doi": "10.1038/s41598-020-68994-0"
+  },
+  "pmb1": {
+    "doi": "10.1088/1361-6560/ab9159"
+  },
+  "bioen1": {
+    "doi": "10.3390/bioengineering7020056"
+  },
+  "brjr1": {
+    "doi": "10.1259/bjr.20190742"
+  },
+  "brjr2": {
+    "doi": "10.1259/bjr.20190283"
+  },
+  "cannan1": {
+    "doi": "10.1186/s12645-019-0046-z"
+  },
+  "frontNano1": {
+    "doi": "10.15761/FNN.1000178"
+  },
+  "cancers1": {
+    "doi": "10.3390/cancers10050150"
+  },
+  "cancers2": {
+    "doi": "10.3390/cancers10030084"
+  },
+  "rsc1": {
+    "doi": "10.1039/c5ra19104a"
+  },
+  "currTop1": {
+    "doi": "10.2174/1568026615666150701115012"
+  },
+  "nanomat1": {
+    "doi": "10.3390/nano6030048"
+  },
+  "intJrad1": {
+    "doi": "10.1016/j.ijrobp.2015.09.032"
+  },
+  "nano-micro": {
+    "doi": "10.1007/s40820-014-0025-1"
+  },
+  "nano-micro2": {
+    "doi": "10.1007/s40820-015-0060-6"
+  },
+  "biomednano1": {
+    "doi": "10.1166/jbn.2015.2067"
+  },
+  "rsc2": {
+    "doi": "10.1039/C4NR02535K"
+  },
+  "biomednano3": {
+    "doi": "10.1166/jbn.2014.2015"
+  },
+  "radres1": { "doi": "10.1667/RR1984.1" },
+  "nanoLett2": {
+    "doi": "10.1021/nl070363y"
+  },
+  "nanolett3": {
+    "doi": "10.1021/nl052396o"
+  },
+  "kbromma-march-25": {
+    "doi": "10.3390/cancers13061465"
+  },
+  "pharmaceutics-march-25": {
+    "doi": "10.3390/pharmaceutics13040442"
+  },
+  "current-onc1": {
+    "doi": "10.3390/curroncol28030183"
+  },
+  "cancers3": {
+    "doi": "10.3390/cancers13133157"
+  },
+  "nanotech7": {
+    "doi": "10.3390/pharmaceutics14020233"
+  },
+  "jackson1": {
+    "doi": "10.3390/pharmaceutics14122795"
+  },
+  "broma-aug-2022": {
+    "doi": "10.1038/s41598-022-17752-5"
+  },
+  "broma-oct-2023": {
+    "doi": "10.1186/s12645-023-00231-5"
+  },
+  "nolan-sept-2023": {
+    "doi": "10.1186/s12645-023-00228-0"
+  },
+  "ze-aug-2023": {
+    "doi": "10.3390/ijms241512523"
+  },
+  "ze-oct-2023": {
+    "doi": "10.33218/001c.90447"
+  },
+  "cecchi-jan-2024": {
+    "doi": "10.3390/pharmaceutics16020175"
+  },
+  "nolan-apr-2024": {
+    "doi": "10.3390/molecules29112438"
+  },
+  "ze-apr-2024": {
+    "doi": "10.3390/pharmaceutics16060713"
+  },
+  "nolan-dec-2024": {
+    "doi": "10.1021/acsanm.4c05460"
+  },
+  "daniel-jul-2025": {
+    "doi": "10.1002/mp.18006"
+  },
+  "nolan-oct-2025": {
+    "doi": "10.1038/s41598-025-22151-7"
+  },
+  "ze-oct-2025": {
+    "doi": "10.3390/nano15191521"
+  }
+}
