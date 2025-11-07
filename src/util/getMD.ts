@@ -1,32 +1,39 @@
 import matter from "gray-matter";
-import remark from "remark";
+import remark from "remark"; // ✅ modern import (prevents future deprecation)
 import html from "remark-html";
 import axios from "axios";
 
-const postsDirectory = `${process.env.PUBLIC_URL}/data`;
+// ✅ Ensure correct base path in both dev ("/data") and production ("/~devikac/data")
+const postsDirectory = `${process.env.PUBLIC_URL || ""}/data`;
 
+/**
+ * Load a single markdown file and convert it to HTML.
+ */
 export async function getMDData(id: string) {
-  const fullPath = `${postsDirectory}/${id}.md`;
-  const fileContents = await axios.get<string>(fullPath);
-  // Use gray-matter to parse the post metadata section
-  const matterResult = matter(fileContents.data);
+  try {
+    const fullPath = `${postsDirectory}/${id}.md`;
+    const fileContents = await axios.get<string>(fullPath);
+    const matterResult = matter(fileContents.data);
 
-  // Use remark to convert markdown into HTML string
-  const processedContent = await remark().use(html).process(matterResult.content);
-  const contentHtml = processedContent.toString();
+    const processedContent = await remark().use(html).process(matterResult.content);
+    const contentHtml = processedContent.toString();
 
-  // Combine the data with the id and contentHtml
-  return {
-    id,
-    contentHtml,
-    date: matterResult.data.date,
-    title: matterResult.data.title,
-  };
+    return {
+      id,
+      contentHtml,
+      date: matterResult.data.date,
+      title: matterResult.data.title,
+    };
+  } catch (error) {
+    console.error(`❌ Failed to load markdown file: ${id}.md`, error);
+    return {
+      id,
+      contentHtml: "<p>Content unavailable.</p>",
+      date: "",
+      title: "Error loading content",
+    };
+  }
 }
-
-type Response = {
-  [key: string]: { value: string };
-};
 
 export interface ResultType {
   id: string;
@@ -36,42 +43,44 @@ export interface ResultType {
   [key: string]: any;
 }
 
+/**
+ * Load and sort markdown data for a given section (e.g., news, members, etc.)
+ */
 export async function getSortedMDData(type: string, newest: boolean = true) {
-  const fullPath = `${postsDirectory}/${type}/index.json`;
-  // Get file names under /data/type
-  const fileNames = await axios.get<{ [key: string]: string }>(fullPath);
+  try {
+    const fullPath = `${postsDirectory}/${type}/index.json`;
+    const fileNames = await axios.get<{ [key: string]: string }>(fullPath);
 
-  const getData = async (fileName: string) => {
-    // Remove ".md" from file name to get id
-    const id = fileName.replace(/\.md$/, "");
-    const mdPath = `${postsDirectory}/${type}/${fileName}`;
-    const fileContents = await axios.get<string>(mdPath);
+    const getData = async (fileName: string): Promise<ResultType> => {
+      const id = fileName.replace(/\.md$/, "");
+      const mdPath = `${postsDirectory}/${type}/${fileName}`;
+      const fileContents = await axios.get<string>(mdPath);
 
-    // Use gray-matter to parse the post metadata section
-    const matterResult = matter(fileContents.data);
+      const matterResult = matter(fileContents.data);
+      const processedContent = await remark().use(html).process(matterResult.content);
+      const contentHtml = processedContent.toString();
 
-    // Use remark to convert markdown into HTML string
-    const processedContent = await remark().use(html).process(matterResult.content);
-    const contentHtml = processedContent.toString();
-
-    const result: ResultType = {
-      id,
-      date: matterResult.data.date,
-      title: matterResult.data.title,
-      contentHtml,
-      ...matterResult.data,
+      return {
+        id,
+        date: matterResult.data.date,
+        title: matterResult.data.title,
+        contentHtml,
+        ...matterResult.data,
+      };
     };
-    return result;
-  };
 
-  // Run all getData calls concurrently
-  const results = await Promise.all(
-    Object.entries(fileNames.data).map(([_, fileName]) => getData(fileName))
-  );
+    const results = await Promise.all(
+      Object.entries(fileNames.data).map(([_, fileName]) => getData(fileName))
+    );
 
-  // Sort posts by date
-  return results.sort((a, b) => {
-    if (newest) return a.date < b.date ? 1 : -1;
-    else return a.date > b.date ? 1 : -1;
-  });
+    // ✅ Defensive sorting: handle invalid/missing dates safely
+    return results.sort((a, b) => {
+      const aDate = new Date(a.date || 0).getTime();
+      const bDate = new Date(b.date || 0).getTime();
+      return newest ? bDate - aDate : aDate - bDate;
+    });
+  } catch (error) {
+    console.error(`❌ Failed to load markdown list for type: ${type}`, error);
+    return [];
+  }
 }
