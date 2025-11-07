@@ -131,7 +131,7 @@ async function fetchInBatches<T>(
 
 // ---------- Fetch All DOIs ----------
 export const getDois = async (location: string, newest: boolean = true) => {
-  const fullPath = `/data/${location}/index.json`;
+  const fullPath = `${process.env.PUBLIC_URL || ""}/data/${location}/index.json`;
   console.log("📚 Loading DOI index from:", fullPath);
 
   let dois: { [key: string]: DOIType } = {};
