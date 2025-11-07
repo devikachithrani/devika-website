@@ -1,21 +1,18 @@
-import path from "path";
 import matter from "gray-matter";
 import remark from "remark";
 import html from "remark-html";
 import axios from "axios";
 
-const postsDirectory = path.join(process.env.PUBLIC_URL, "data");
+const postsDirectory = `${process.env.PUBLIC_URL}/data`;
 
 export async function getMDData(id: string) {
-  const fullPath = path.join(postsDirectory, `${id}.md`);
+  const fullPath = `${postsDirectory}/${id}.md`;
   const fileContents = await axios.get<string>(fullPath);
   // Use gray-matter to parse the post metadata section
   const matterResult = matter(fileContents.data);
 
   // Use remark to convert markdown into HTML string
-  const processedContent = await remark()
-    .use(html)
-    .process(matterResult.content);
+  const processedContent = await remark().use(html).process(matterResult.content);
   const contentHtml = processedContent.toString();
 
   // Combine the data with the id and contentHtml
@@ -40,23 +37,21 @@ export interface ResultType {
 }
 
 export async function getSortedMDData(type: string, newest: boolean = true) {
-  const fullPath = path.join(postsDirectory, `${type}/index.json`);
+  const fullPath = `${postsDirectory}/${type}/index.json`;
   // Get file names under /data/type
   const fileNames = await axios.get<{ [key: string]: string }>(fullPath);
+
   const getData = async (fileName: string) => {
     // Remove ".md" from file name to get id
     const id = fileName.replace(/\.md$/, "");
-
-    // Read markdown file as string
-    const fullPath = path.join(postsDirectory, `${type}/${fileName}`);
-    const fileContents = await axios.get<string>(fullPath);
+    const mdPath = `${postsDirectory}/${type}/${fileName}`;
+    const fileContents = await axios.get<string>(mdPath);
 
     // Use gray-matter to parse the post metadata section
     const matterResult = matter(fileContents.data);
+
     // Use remark to convert markdown into HTML string
-    const processedContent = await remark()
-      .use(html)
-      .process(matterResult.content);
+    const processedContent = await remark().use(html).process(matterResult.content);
     const contentHtml = processedContent.toString();
 
     const result: ResultType = {
@@ -66,36 +61,17 @@ export async function getSortedMDData(type: string, newest: boolean = true) {
       contentHtml,
       ...matterResult.data,
     };
-    // Combine the data with the id
     return result;
   };
 
-  // In order to use asyc/await, need to wrap the functions in Promise.all, as the map will return promises.
-  const runGetData = async () => {
-    const results = await Promise.all(
-      Object.entries(fileNames.data).map(([key, fileName]: [string, string]) =>
-        getData(fileName)
-      )
-    );
-    return results;
-  };
-
-  const allPostsData = await runGetData();
+  // Run all getData calls concurrently
+  const results = await Promise.all(
+    Object.entries(fileNames.data).map(([_, fileName]) => getData(fileName))
+  );
 
   // Sort posts by date
-  return allPostsData.sort((a, b) => {
-    if (newest)
-      if (a.date < b.date) {
-        return 1;
-      } else {
-        return -1;
-      }
-    else {
-      if (a.date > b.date) {
-        return 1;
-      } else {
-        return -1;
-      }
-    }
+  return results.sort((a, b) => {
+    if (newest) return a.date < b.date ? 1 : -1;
+    else return a.date > b.date ? 1 : -1;
   });
 }

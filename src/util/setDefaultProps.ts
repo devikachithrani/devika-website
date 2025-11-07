@@ -1,4 +1,4 @@
-export default function setDefaults<Props, Defaults>(
+export default function setDefaults<Props, Defaults extends object>(
   props: Props,
   defaults: Defaults
 ): Required<Props> {
