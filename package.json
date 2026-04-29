@@ -75,7 +75,7 @@
     "style-loader": "0.23.1",
     "terser-webpack-plugin": "2.3.8",
     "ts-pnp": "1.1.6",
-    "typescript": "~3.7.2",
+    "typescript": "^5.9.3",
     "url-loader": "2.3.0",
     "webpack": "4.42.0",
     "webpack-dev-server": "3.11.0",
@@ -104,6 +104,7 @@
   },
   "devDependencies": {
     "@types/classnames": "^2.2.10",
+    "@types/minimatch": "^6.0.0",
     "@types/react-router-dom": "^5.1.5",
     "@types/react-swipeable-views": "^0.13.0"
   },
@@ -163,5 +164,12 @@
     "presets": [
       "react-app"
     ]
+  },
+  "resolutions": {
+    "@types/react": "16.14.67",
+    "@types/react-dom": "16.9.25",
+    "@types/react-router": "5.1.20",
+    "@types/react-router-dom": "5.1.7",
+    "@types/react-swipeable-views": "0.13.1"
   }
 }
