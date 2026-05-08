@@ -1,4 +1,4 @@
-export default function setDefaults<Props, Defaults extends Record<string, unknown>>(
+export default function setDefaults<Props, Defaults extends object>(
   props: Props,
   defaults: Defaults
 ): Required<Props> {

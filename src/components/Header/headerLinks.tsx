@@ -1,6 +1,4 @@
 import React from "react";
-
-// react components for routing our app without refresh
 import { Link } from "react-router-dom";
 
 // @material-ui/core components
@@ -11,7 +9,6 @@ import ListItem from "@material-ui/core/ListItem";
 import Button from "components/Button";
 
 import useStyles from "theme/jss/material-kit-react/components/headerLinkStyle";
-import {} from "constants";
 import {
   MEMBERS_PAGE_ROUTE,
   PUB_PAGE_ROUTE,
