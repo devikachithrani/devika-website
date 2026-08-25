@@ -5,7 +5,7 @@ active: true
 credentials: ""
 position: "MSc Student"
 funding: "N/A"
-profile: "max.jpg"
+profile: "max2.jpg"
 undergrad: false
 ---
 

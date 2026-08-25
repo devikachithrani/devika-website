@@ -1,7 +1,7 @@
 ---
 title: "Kieren O'Neil"
 date: "2024-05-23"
-active: true
+active: false
 credentials: "BSc in Physics"
 position: "MSc Student"
 funding:

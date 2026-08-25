@@ -78,20 +78,20 @@ const Publication = (props: PublicationProps) => {
           {!publication.book && (
             <div>
               {publication.journal}.{" "}
-              {publication.date.getFullYear() +
+              {new Date(publication.date).getFullYear() +
                 " " +
-                publication.date.toLocaleString("default", { month: "short" })}
+                new Date(publication.date).toLocaleString("default", { month: "short" })}
               ; DOI: {publication.DOI}
             </div>
           )}
           {publication.book && (
             <div>
               in {publication.journal}. pp. {publication.book.page}.{" "}
-              {publication.book.publsher}
+              {publication.book.publisher}
               {", "}
-              {publication.date.getFullYear() +
+              {new Date(publication.date).getFullYear() +
                 " " +
-                publication.date.toLocaleString("default", { month: "short" })}
+                new Date(publication.date).toLocaleString("default", { month: "short" })}
               ; DOI: {publication.DOI}
             </div>
           )}

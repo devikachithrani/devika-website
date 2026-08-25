@@ -1,7 +1,7 @@
 ---
 title: "Nolan Jackson"
 date: "2022-05-01"
-active: true
+active: false
 credentials: "BSc Physics"
 position: "PhD Student"
 funding: "NSERC USRA"

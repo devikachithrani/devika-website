@@ -1,7 +1,7 @@
 ---
 title: "Daniel Cecchi"
 date: "2023-09-01"
-active: true
+active: false
 credentials: "MSc Medical Physics"
 position: "PhD Student"
 funding: "N/A"
