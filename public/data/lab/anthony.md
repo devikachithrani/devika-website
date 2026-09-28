@@ -1,7 +1,7 @@
 ---
 title: "Anthony Xu"
 date: "2026-05-05"
-active: true
+active: false
 credentials: "Unknown"
 position: "NSERC USRA Summer Student"
 funding: "N/A"
